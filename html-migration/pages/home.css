@@ -1,0 +1,16 @@
+.home-hero .hero-media {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(25, 29, 33, 0.95),
+      rgba(51, 58, 66, 0.58),
+      rgba(51, 58, 66, 0.1)
+    ),
+    url("/assets/hero-2-web.jpg");
+}
+.home-hero .hero-content {
+  max-width: 900px;
+}
+.home-hero .hero-content p {
+  max-width: 600px;
+}

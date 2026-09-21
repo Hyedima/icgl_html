@@ -1,0 +1,17 @@
+.admin-shell .admin-header {
+  position: static;
+}
+.admin-section {
+  padding: 44px 0;
+}
+.manager-grid .manager {
+  min-height: 190px;
+}
+.manager button {
+  margin-top: 10px;
+}
+.signin-note {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--soft);
+}

@@ -1,0 +1,36 @@
+<svg style="width:44px;height:44px;flex-shrink:0;display:block;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1.48803in" height="1.48803in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1488.03 1488.03"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#F3F3F3}
+   ]]>
+  </style>
+   <clipPath id="ci2-id0">
+    <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+   </clipPath>
+    <clipPath id="ci2-id1">
+     <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,393.33 -305.23,715.33 -691.75,742.17l-104.54 0c-386.52,-26.83 -691.75,-348.83 -691.75,-742.17 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+    </clipPath>
+    <clipPath id="ci2-id2">
+     <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+    </clipPath>
+ </defs>
+ <g id="ci2-Layer_x0020_1">
+  <metadata id="ci2-CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+  <g style="clip-path:url(#ci2-id0)">
+   <g id="ci2-_2411671877600">
+   </g>
+   <g style="clip-path:url(#ci2-id1)">
+    <image x="-3" y="0.02" width="1488.81" height="1488.81" xlink:href="images/asset-620c630c.png"/>
+   </g>
+   <g style="clip-path:url(#ci2-id2)">
+   </g>
+  </g>
+  <path class="fil1" d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+ </g>
+</svg>

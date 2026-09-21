@@ -1,0 +1,29 @@
+.resource-hero {
+  background: var(--lime-light);
+}
+.resource-section {
+  background: #fff;
+}
+.download-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.download-row:last-child {
+  border-bottom: 0;
+}
+.download-row p {
+  margin: 4px 0 0;
+  color: var(--soft);
+  font-size: 0.85rem;
+}
+.report-panel {
+  background: var(--ink);
+  color: var(--cream);
+}
+.report-panel h2 {
+  color: var(--cream);
+}
