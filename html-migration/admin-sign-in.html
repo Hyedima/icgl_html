@@ -1,34 +1,42 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="icgl-api-base" content="http://localhost:5000/api">
     <title>Admin sign in | ICGL</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="pages/admin.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages/admin.css">
   </head>
   <body>
-    <main class="signin">
-      <div class="signin-box">
-        <div class="eyebrow">ICGL workspace</div>
-        <h1 class="display">Welcome back.</h1>
-        <p class="muted">Sign in to manage the public-facing content system.</p>
-        <form class="form" data-demo-form>
-          <input required type="email" placeholder="Email address" /><input
-            required
-            type="password"
-            placeholder="Password" /><button class="btn btn-dark" type="submit">
-            Sign in ↗
-          </button>
-        </form>
-        <div class="notice hidden">
-          Signed in for this static preview. The API session can be connected
-          next.
+    <main class="auth-layout">
+      <section class="auth-story">
+        <a class="auth-logo display" href="index.html">ICGL<span>.</span></a>
+        <div>
+          <p class="eyebrow">Content operations</p>
+          <h1 class="display">Keep the story moving.</h1>
+          <p>A focused workspace for the people shaping ICGL’s public information, resources, and impact narrative.</p>
+          <ul><li>One place for every content surface</li><li>Secure, cookie-based sessions</li></ul>
         </div>
-        <p class="signin-note">
-          <a href="index.html">← Return to public site</a>
-        </p>
-      </div>
+        <small>Impact Credit Guarantee Limited · Admin workspace</small>
+      </section>
+      <section class="auth-panel">
+        <div class="auth-form-wrap">
+          <a class="auth-mobile-logo display" href="index.html">ICGL<span>.</span></a>
+          <span class="auth-icon" aria-hidden="true">⌑</span>
+          <p class="eyebrow">Admin workspace</p>
+          <h2 class="display">Welcome back</h2>
+          <p>Sign in to manage ICGL content and submissions.</p>
+          <form class="auth-form" data-auth-form="login">
+            <label>Email address<input name="email" type="email" autocomplete="username" required placeholder="you@company.com"></label>
+            <label>Password<input name="password" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+            <p class="auth-error" role="alert" hidden></p>
+            <button class="btn btn-dark" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="auth-switch">Need an account? <a href="admin-sign-up.html">Create one</a></p>
+          <a class="return-link" href="index.html">← Return to public site</a>
+        </div>
+      </section>
     </main>
     <script src="interaction.js"></script>
   </body>

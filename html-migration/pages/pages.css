@@ -94,3 +94,417 @@
     height: 160px;
   }
 }
+.contact-content {
+  background: #fff;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 48px;
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+.contact-layout h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.25;
+}
+.contact-layout .lead {
+  margin: 16px 0 28px;
+  font-size: .9rem;
+  line-height: 1.75;
+}
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 20px;
+}
+.contact-detail > span {
+  color: var(--lime-dark);
+  font-size: 1.1rem;
+}
+.contact-detail small {
+  color: var(--soft);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.contact-detail p,
+.contact-detail a {
+  display: block;
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: .86rem;
+}
+.contact-map {
+  width: 100%;
+  height: 245px;
+  margin-top: 26px;
+  border: 0;
+  border-radius: 16px;
+}
+.contact-form-panel {
+  align-self: start;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--lime-light);
+}
+.contact-form-panel h2 {
+  font-size: 1.35rem;
+}
+.contact-form {
+  margin-top: 24px;
+  padding: 0;
+  background: transparent;
+}
+.contact-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 7px;
+}
+.contact-form .notice {
+  margin: 0;
+}
+.impact-overview {
+  border-bottom: 1px solid rgba(51, 58, 66, .1);
+  background: #fff;
+}
+.impact-overview .stats {
+  gap: 16px;
+  margin-top: 24px;
+  border: 0;
+  background: transparent;
+}
+.impact-overview .light-stat {
+  padding: 22px;
+  border: 1px solid rgba(51, 58, 66, .1);
+  border-radius: 16px;
+  background: var(--cream);
+  color: var(--ink);
+}
+.impact-overview .light-stat strong {
+  color: var(--ink);
+  font-size: 2rem;
+}
+.impact-overview .light-stat span {
+  color: var(--soft);
+}
+.impact-overview .secondary-stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+.geography-section,
+.pfi-performance {
+  background: var(--lime-light);
+}
+.geography-grid {
+  margin-top: 28px;
+}
+.zone-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(51, 58, 66, .1);
+  border-radius: 14px;
+  background: var(--cream);
+}
+.zone-card span {
+  font-size: .9rem;
+  font-weight: 500;
+}
+.zone-card strong {
+  color: var(--lime-dark);
+  font-family: var(--display);
+  font-size: 1.25rem;
+}
+.certification-cards img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+.pfi-performance .grid {
+  margin-top: 28px;
+}
+.exclusion-section {
+  background: var(--lime-light);
+}
+.exclusion-section .list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 14px;
+}
+.exclusion-section .list li {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--cream);
+}
+.service-intro {
+  border-bottom: 1px solid rgba(51, 58, 66, .1);
+  background: #fff;
+}
+.service-intro .container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.service-intro .lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.service-intro img {
+  width: 100%;
+  min-height: 280px;
+  max-height: 390px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+.service-products {
+  background: var(--lime-light);
+}
+.service-products .grid {
+  margin-top: 26px;
+}
+.service-products .card {
+  min-height: 245px;
+  background: var(--cream);
+}
+.service-products .card.dark {
+  background: var(--ink);
+}
+.service-products .card h3 {
+  margin-top: 14px;
+}
+.service-products .card .btn {
+  margin-top: 12px;
+}
+.service-cta {
+  padding: 64px 0;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}
+.service-cta h2 {
+  margin: 0;
+  color: var(--cream);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+.service-cta .btn {
+  margin-top: 20px;
+}
+.career-highlights {
+  border-bottom: 1px solid rgba(51, 58, 66, .1);
+  background: var(--lime-light);
+}
+.career-highlights > .container > .lead {
+  max-width: 700px;
+}
+.career-highlights .grid {
+  margin-top: 28px;
+}
+.career-highlights .card {
+  background: var(--cream);
+}
+.career-testimonial {
+  background: #fff;
+}
+.career-testimonial .container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 900px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.testimonial-avatar {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  flex: none;
+  place-items: center;
+  border: 1px dashed rgba(51, 58, 66, .24);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(51, 58, 66, .07) 1px, transparent 1px) 0 0 / 12px 12px;
+  color: var(--soft);
+  font-size: .75rem;
+  font-weight: 600;
+}
+.career-testimonial blockquote {
+  margin: 12px 0;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.3;
+}
+.career-testimonial p {
+  color: var(--soft);
+  font-size: .85rem;
+}
+.news-list-card {
+  display: flex;
+  gap: 18px;
+  min-height: auto;
+  align-items: flex-start;
+  padding: 22px;
+}
+.news-list-card > img {
+  width: 128px;
+  height: 106px;
+  flex: none;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.news-list-card > div {
+  min-width: 0;
+}
+.news-list-card time {
+  display: block;
+  margin-top: 7px;
+  color: var(--soft);
+  font-size: .75rem;
+}
+.news-list-card h3 {
+  margin-top: 10px;
+}
+@media (max-width: 680px) {
+  .career-testimonial .container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .news-list-card {
+    flex-direction: column;
+  }
+  .news-list-card > img {
+    width: 100%;
+    height: 180px;
+  }
+}
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+}
+@media (max-width: 680px) {
+  .contact-layout {
+    padding-top: 56px;
+    padding-bottom: 62px;
+  }
+  .contact-form-panel {
+    padding: 23px;
+  }
+}
+.about-intro {
+  border-bottom: 1px solid rgba(51, 58, 66, .1);
+  background: #fff;
+}
+.about-intro .container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.about-intro .lead {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+.about-intro img {
+  width: 100%;
+  min-height: 300px;
+  max-height: 400px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+.identity-section,
+.management-section {
+  background: var(--lime-light);
+}
+.identity-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+.identity-heading h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1.2;
+}
+.identity-cards {
+  margin-top: 38px;
+}
+.identity-cards .card {
+  background: var(--cream);
+}
+.people-section {
+  background: #fff;
+}
+.people-grid {
+  margin-top: 34px;
+}
+.person-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--ink);
+  color: var(--cream);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(16, 20, 12, .17);
+}
+.person-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter .5s ease, transform .6s ease;
+}
+.person-card:hover > img {
+  filter: grayscale(0);
+  transform: scale(1.04);
+}
+.person-card > div {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 60px 20px 20px;
+  background: linear-gradient(0deg, var(--ink), rgba(51, 58, 66, .78), transparent);
+}
+.person-card h3 {
+  margin: 0;
+  color: var(--cream);
+  font-size: 1.55rem;
+  line-height: 1.05;
+}
+.person-card p {
+  margin: 8px 0 0;
+  color: rgba(248, 248, 242, .72);
+  font-size: .75rem;
+  line-height: 1.45;
+}
+.person-card span {
+  display: inline-block;
+  margin-top: 9px;
+  color: var(--lime);
+  font-size: .75rem;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.person-card:hover span,
+.person-card:focus-visible span {
+  opacity: 1;
+}
+@media (max-width: 680px) {
+  .identity-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .about-intro .container {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+}

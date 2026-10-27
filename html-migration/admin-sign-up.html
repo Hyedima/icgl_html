@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="icgl-api-base" content="http://localhost:5000/api">
+    <title>Create admin account | ICGL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages/admin.css">
+  </head>
+  <body>
+    <main class="auth-layout">
+      <section class="auth-story">
+        <a class="auth-logo display" href="index.html">ICGL<span>.</span></a>
+        <div>
+          <p class="eyebrow">Content operations</p>
+          <h1 class="display">Keep the story moving.</h1>
+          <p>A focused workspace for the people shaping ICGL’s public information, resources, and impact narrative.</p>
+          <ul><li>One place for every content surface</li><li>Secure, cookie-based sessions</li></ul>
+        </div>
+        <small>Impact Credit Guarantee Limited · Admin workspace</small>
+      </section>
+      <section class="auth-panel">
+        <div class="auth-form-wrap">
+          <a class="auth-mobile-logo display" href="index.html">ICGL<span>.</span></a>
+          <span class="auth-icon" aria-hidden="true">⌑</span>
+          <p class="eyebrow">Admin workspace</p>
+          <h2 class="display">Create your account</h2>
+          <p>Set up your development account and start managing the site.</p>
+          <form class="auth-form" data-auth-form="signup">
+            <label>Full name<input name="name" autocomplete="name" required placeholder="Your name"></label>
+            <label>Email address<input name="email" type="email" autocomplete="username" required placeholder="you@company.com"></label>
+            <label>Password<input name="password" type="password" autocomplete="new-password" minlength="6" required placeholder="At least 6 characters"></label>
+            <p class="auth-error" role="alert" hidden></p>
+            <button class="btn btn-dark" type="submit">Create account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="auth-switch">Already have an account? <a href="admin-sign-in.html">Sign in</a></p>
+          <a class="return-link" href="index.html">← Return to public site</a>
+        </div>
+      </section>
+    </main>
+    <script src="interaction.js"></script>
+  </body>
+</html>
