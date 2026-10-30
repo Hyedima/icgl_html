@@ -79,6 +79,11 @@
   padding: 6px 16px;
   border-radius: 999px;
 }
+@keyframes badge-beam-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 .beam-badge .beam,
 .beam-link .beam {
   position: absolute;
