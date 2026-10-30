@@ -913,6 +913,11 @@
   font-weight: 500;
   line-height: 1.25;
 }
+@keyframes seal-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .solution-seal {
   display: none;
 }
