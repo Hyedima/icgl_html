@@ -189,8 +189,8 @@ function installPageMotion() {
     }
     hero.prepend(layer);
   }
-  document.querySelectorAll(".reveal, .card, .stat").forEach((item, index) => {
-    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+  document.querySelectorAll(".reveal, .card, .stat, [data-home-motion], .home-reveal, .home-card-motion, .photo-reveal").forEach((item, index) => {
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 80}ms`);
     item.classList.add("motion-ready");
   });
   document.querySelectorAll(".logo-track, .photo-column").forEach((track) => {
@@ -267,6 +267,56 @@ function installForms() {
   });
 }
 
+function installMarquees() {
+  const rows = [...document.querySelectorAll("[data-marquee]")];
+  if (!rows.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const marquees = rows.map((row) => {
+    const track = row.querySelector(".logo-track");
+    const direction = row.dataset.direction === "right" ? -1 : 1;
+    const marquee = {
+      row,
+      track,
+      direction,
+      offset: 0,
+      speed: direction * 36,
+      targetSpeed: direction * 36,
+      pointerRatio: 0.5,
+    };
+    row.addEventListener("pointerenter", () => {
+      marquee.targetSpeed = (marquee.pointerRatio - 0.5) * 72;
+    });
+    row.addEventListener("pointerleave", () => {
+      marquee.targetSpeed = marquee.direction * 36;
+    });
+    row.addEventListener("pointermove", (event) => {
+      const bounds = row.getBoundingClientRect();
+      marquee.pointerRatio = bounds.width
+        ? Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width))
+        : 0.5;
+      if (row.matches(":hover")) marquee.targetSpeed = (marquee.pointerRatio - 0.5) * 72;
+    });
+    return marquee;
+  });
+
+  let previousTime = performance.now();
+  const animate = (time) => {
+    const delta = Math.min((time - previousTime) / 1000, 0.05);
+    previousTime = time;
+    marquees.forEach((marquee) => {
+      marquee.speed += (marquee.targetSpeed - marquee.speed) * Math.min(3.5 * delta, 1);
+      marquee.offset += marquee.speed * delta;
+      const loopWidth = marquee.track.scrollWidth / 2;
+      if (loopWidth > 0) {
+        marquee.offset = ((marquee.offset % loopWidth) + loopWidth) % loopWidth;
+      }
+      marquee.track.style.transform = `translateX(${-marquee.offset}px)`;
+    });
+    window.requestAnimationFrame(animate);
+  };
+  window.requestAnimationFrame(animate);
+}
+
 function installAuthentication() {
   document.querySelectorAll("[data-auth-form]").forEach((form) => {
     form.addEventListener("submit", async (event) => {
@@ -306,26 +356,78 @@ function installAuthentication() {
 }
 
 function installPeriodSelector() {
-  const selector = document.querySelector("[data-period-selector]");
-  if (!selector) return;
-  selector.addEventListener("change", () => {
-    const data = JSON.parse(selector.selectedOptions[0].dataset.stats);
+  const dropdown = document.querySelector("[data-period-dropdown]");
+  if (!dropdown) return;
+
+  const trigger = dropdown.querySelector(".period-trigger");
+  const activePeriod = dropdown.querySelector("[data-active-period]");
+  const menu = dropdown.querySelector(".period-menu");
+  const periodOptions = [...menu.querySelectorAll("[data-period]")];
+  let closeTimer;
+
+  const setOpen = (open) => {
+    window.clearTimeout(closeTimer);
+    dropdown.classList.toggle("open", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    menu.setAttribute("aria-hidden", String(!open));
+  };
+  const closeSoon = () => {
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(() => setOpen(false), 250);
+  };
+  const applyPeriod = (option) => {
+    const stats = JSON.parse(option.dataset.stats);
     document.querySelectorAll("[data-stat-index]").forEach((card) => {
-      const stat = data[Number(card.dataset.statIndex)];
-      card.querySelector("[data-stat-value]").textContent = stat.value;
-      const delta = card.querySelector("[data-stat-delta]");
-      if (delta) delta.textContent = stat.delta;
-      const progress = card.querySelector(".progress-ring");
-      const percent = Number.parseInt(stat.value, 10);
-      if (progress && Number.isFinite(percent)) progress.style.setProperty("--progress", `${percent}%`);
+      const stat = stats[Number(card.dataset.statIndex)];
+      card.querySelectorAll("[data-stat-value]").forEach((value) => {
+        value.textContent = stat.value;
+      });
+      card.querySelectorAll("[data-stat-delta]").forEach((delta) => {
+        delta.textContent = stat.delta;
+      });
+      const ring = card.querySelector("[data-progress-ring]");
+      if (ring) {
+        const percent = Number.parseInt(stat.value, 10);
+        ring.dataset.percent = String(percent);
+        ring.style.setProperty("--progress-percent", String(percent));
+      }
     });
-    document.querySelector("[data-period-label]").textContent = selector.value;
+    activePeriod.textContent = option.dataset.period;
+    document.querySelector("[data-period-label]").textContent = `As of ${option.dataset.period}`;
+    periodOptions.forEach((item) => {
+      const active = item === option;
+      item.hidden = active;
+      item.setAttribute("aria-current", String(active));
+    });
+    setOpen(false);
+  };
+
+  trigger.addEventListener("click", () => setOpen(!dropdown.classList.contains("open")));
+  dropdown.addEventListener("mouseenter", () => window.clearTimeout(closeTimer));
+  dropdown.addEventListener("mouseleave", closeSoon);
+  dropdown.addEventListener("focusout", (event) => {
+    if (!dropdown.contains(event.relatedTarget)) closeSoon();
   });
+  periodOptions.forEach((option) => option.addEventListener("click", () => applyPeriod(option)));
+
+  const initiallyActive = periodOptions.find((option) => option.dataset.period === activePeriod.textContent);
+  if (initiallyActive) {
+    periodOptions.forEach((option) => {
+      const active = option === initiallyActive;
+      option.hidden = active;
+      option.setAttribute("aria-current", String(active));
+    });
+    document.querySelectorAll("[data-progress-ring]").forEach((ring) => {
+      ring.style.setProperty("--progress-percent", ring.dataset.percent);
+    });
+  }
+  setOpen(false);
 }
 
 installSharedLayout();
 installPageMotion();
 installFaqs();
 installForms();
+installMarquees();
 installAuthentication();
 installPeriodSelector();
