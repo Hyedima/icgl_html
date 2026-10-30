@@ -106,6 +106,70 @@ const iconFiles = [
   "hero-icon-pie-chart.png", "hero-icon-network.png", "hero-icon-briefcase.png",
   "hero-icon-growth.png",
 ];
+const heroIconPositions = [
+  [8, 4], [4, 22], [14, 40], [6, 58], [10, 76], [4, 92],
+  [40, 2], [46, 18], [34, 34], [44, 52], [38, 70], [42, 88],
+  [74, 10], [78, 30], [70, 50],
+];
+const heroIconDriftAxes = [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 0], [0, 1, 1], [1, 0, 1]];
+
+function shuffled(items) {
+  const result = items.slice();
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+function buildHeroIconConfigs() {
+  const iconSequence = shuffled([0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]);
+  for (let pass = 0; pass < 10; pass += 1) {
+    let changed = false;
+    for (let i = 0; i < iconSequence.length; i += 1) {
+      for (let j = i + 1; j < iconSequence.length; j += 1) {
+        const [topA, leftA] = heroIconPositions[i];
+        const [topB, leftB] = heroIconPositions[j];
+        if (iconSequence[i] !== iconSequence[j] || Math.hypot(topA - topB, leftA - leftB) >= 30) continue;
+        for (let k = 0; k < iconSequence.length; k += 1) {
+          if (k === i || k === j || iconSequence[k] === iconSequence[i]) continue;
+          const [topC, leftC] = heroIconPositions[k];
+          if (Math.hypot(topA - topC, leftA - leftC) >= 30) {
+            [iconSequence[j], iconSequence[k]] = [iconSequence[k], iconSequence[j]];
+            changed = true;
+            break;
+          }
+        }
+      }
+    }
+    if (!changed) break;
+  }
+  const tiers = shuffled(["near", "near", "near", "near", "near", "mid", "mid", "mid", "mid", "mid", "far", "far", "far", "far", "far"]);
+  const tierStyles = {
+    near: { blur: 1.2, opacity: 1, size: [70, 86], amplitude: 30, rotation: 26 },
+    mid: { blur: 2.6, opacity: .86, size: [46, 58], amplitude: 23, rotation: 20 },
+    far: { blur: 4.2, opacity: .66, size: [26, 38], amplitude: 17, rotation: 15 },
+  };
+  return heroIconPositions.map(([top, left], index) => {
+    const tier = tiers[index];
+    const style = tierStyles[tier];
+    const direction = Math.random() < .5 ? 1 : -1;
+    return {
+      top,
+      left,
+      icon: iconFiles[iconSequence[index]],
+      size: Math.round(style.size[0] + (style.size[1] - style.size[0]) * Math.random()),
+      blur: style.blur,
+      opacity: style.opacity,
+      duration: 4200 + Math.random() * 3600,
+      delay: Math.round(Math.random() * 650),
+      amplitudeY: style.amplitude * direction,
+      amplitudeX: style.amplitude * .55 * (Math.random() < .5 ? 1 : -1),
+      rotation: style.rotation * direction,
+      axis: heroIconDriftAxes[Math.floor(Math.random() * heroIconDriftAxes.length)],
+    };
+  });
+}
 
 function installSharedLayout() {
   if (location.pathname.startsWith("/admin") || location.pathname.includes("admin-")) return;
@@ -166,7 +230,7 @@ function installPageMotion() {
       labels.slice(1).forEach((label) => {
         const divider = document.createElement("span");
         divider.setAttribute("aria-hidden", "true");
-        divider.textContent = "›";
+        divider.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
         const current = document.createElement("span");
         current.textContent = label;
         crumbs.append(divider, current);
@@ -177,19 +241,51 @@ function installPageMotion() {
     const layer = document.createElement("div");
     layer.className = "hero-icons-layer";
     layer.setAttribute("aria-hidden", "true");
-    for (let i = 0; i < 15; i += 1) {
-      const card = document.createElement("img");
-      card.className = `hero-icon-card depth-${i % 3}`;
-      card.src = `assets/${iconFiles[i % iconFiles.length]}`;
-      card.alt = "";
-      card.style.setProperty("--top", `${[4, 22, 40, 58, 76, 92][i % 6]}%`);
-      card.style.setProperty("--left", `${[8, 4, 14, 6, 10, 4, 40, 46, 34, 44, 38, 42, 74, 78, 70][i]}%`);
-      card.style.setProperty("--delay", `${reduceMotion ? 0 : (i % 7) * 90}ms`);
+    const iconConfigs = buildHeroIconConfigs();
+    iconConfigs.forEach((config) => {
+      const card = document.createElement("div");
+      card.className = "hero-icon-card";
+      card.style.top = `${config.top}%`;
+      card.style.left = `${config.left}%`;
+      card.style.setProperty("--size", `${config.size}px`);
+      card.style.setProperty("--target-opacity", config.opacity);
+      card.style.filter = `blur(${config.blur}px)`;
+      const float = document.createElement("div");
+      float.className = "hero-icon-float";
+      const extrude = document.createElement("div");
+      extrude.className = "hero-icon-extrude";
+      const depth = config.size * .42;
+      for (let slice = 0; slice < 16; slice += 1) {
+        const progress = slice / 15;
+        const item = document.createElement("div");
+        item.className = "hero-icon-slice";
+        item.style.transform = `translateZ(${(-depth / 2 + depth * progress).toFixed(2)}px)`;
+        item.style.setProperty("--slice-brightness", (1 - (1 - progress) * .55).toFixed(2));
+        const image = document.createElement("img");
+        image.src = `assets/${config.icon}`;
+        image.alt = "";
+        item.append(image);
+        extrude.append(item);
+      }
+      float.append(extrude);
+      card.append(float);
       layer.append(card);
-    }
+      const [dx, dy, dz] = config.axis;
+      if (!reduceMotion && typeof float.animate === "function") {
+        float.animate(
+          [
+            { transform: `translate3d(0,0,0) rotate3d(${dx},${dy},${dz},0deg)` },
+            { transform: `translate3d(${config.amplitudeX}px, ${config.amplitudeY}px, 0) rotate3d(${dx},${dy},${dz},${config.rotation}deg)` },
+            { transform: `translate3d(0,0,0) rotate3d(${dx},${dy},${dz},0deg)` },
+          ],
+          { duration: config.duration, iterations: Infinity, easing: "ease-in-out" }
+        );
+      }
+      window.setTimeout(() => card.classList.add("play"), reduceMotion ? 0 : config.delay);
+    });
     hero.prepend(layer);
   }
-  document.querySelectorAll(".reveal, .card, .stat, [data-home-motion], .home-reveal, .home-card-motion, .photo-reveal").forEach((item, index) => {
+  document.querySelectorAll(".reveal, .card, .stat, [data-home-motion], .home-reveal, .home-card-motion, .photo-reveal, .about-person-card").forEach((item, index) => {
     item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 80}ms`);
     item.classList.add("motion-ready");
   });

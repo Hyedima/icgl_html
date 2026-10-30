@@ -825,29 +825,38 @@ body {
 }
 .hero-icon-card {
   position: absolute;
-  top: var(--top);
-  left: var(--left);
-  width: clamp(28px, 5vw, 72px);
   opacity: 0;
-  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .35));
-  animation: icon-arrive .8s cubic-bezier(.22, 1, .36, 1) var(--delay) forwards,
-    icon-drift 7s ease-in-out calc(var(--delay) + .8s) infinite alternate;
+  transform: translateY(46px) scale(.55);
+  transition: opacity .8s cubic-bezier(.22, 1, .36, 1), transform .8s cubic-bezier(.22, 1, .36, 1);
 }
-.hero-icon-card.depth-1 {
-  width: clamp(24px, 4vw, 52px);
-  opacity: .78;
-  filter: blur(1.2px) drop-shadow(0 8px 10px rgba(0, 0, 0, .3));
+.hero-icon-card.play {
+  opacity: var(--target-opacity, 1);
+  transform: translateY(0) scale(1);
 }
-.hero-icon-card.depth-2 {
-  width: clamp(18px, 3vw, 36px);
-  opacity: .58;
-  filter: blur(2px) drop-shadow(0 7px 10px rgba(0, 0, 0, .24));
+.hero-icon-float,
+.hero-icon-extrude {
+  transform-style: preserve-3d;
 }
-@keyframes icon-arrive {
-  to { opacity: .82; transform: translateY(0) scale(1); }
+.hero-icon-extrude {
+  position: relative;
+  width: var(--size, 72px);
+  height: var(--size, 72px);
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, .5)) drop-shadow(0 3px 4px rgba(0, 0, 0, .35));
 }
-@keyframes icon-drift {
-  to { translate: 10px -14px; rotate: 8deg; }
+.hero-icon-slice {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+.hero-icon-slice img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(var(--slice-brightness, 1));
 }
 .motion-ready {
   opacity: 0;
@@ -999,8 +1008,5 @@ body {
   .site-footer .footer-bottom div {
     margin-top: 12px;
     gap: 12px 18px;
-  }
-  .hero-icon-card {
-    width: 34px;
   }
 }
