@@ -214,6 +214,33 @@ const routesByPath = {
 
 function installPageMotion() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const impactCounters = Array.from(document.querySelectorAll(".impact-count[data-count-target]"));
+  const renderImpactCounter = (counter, value) => {
+    const formatted = Math.round(value).toLocaleString("en-US");
+    counter.textContent = `${counter.dataset.countPrefix || ""}${formatted}${counter.dataset.countSuffix || ""}`;
+  };
+  if (impactCounters.length) {
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      impactCounters.forEach((counter) => renderImpactCounter(counter, Number(counter.dataset.countTarget)));
+    } else {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const counter = entry.target;
+          const target = Number(counter.dataset.countTarget);
+          const start = performance.now();
+          const animate = (now) => {
+            const progress = Math.min((now - start) / 1400, 1);
+            renderImpactCounter(counter, target * (1 - (1 - progress) ** 4));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(counter);
+        });
+      }, { threshold: 0.6 });
+      impactCounters.forEach((counter) => counterObserver.observe(counter));
+    }
+  }
   const hero = document.querySelector(".page-hero");
   if (hero) {
     const heroContent = hero.querySelector(".container");

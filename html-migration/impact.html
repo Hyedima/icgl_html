@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages/pages.css" />
   </head>
-  <body>
+  <body class="impact-page">
     <header class="site-header">
       <nav class="nav">
         <a class="logo" href="index.html"
@@ -36,148 +36,108 @@
       </div>
     </header>
     <main>
-      <section class="page-hero">
+      <section class="page-hero impact-page-hero">
         <div class="container">
-          <div class="crumbs">Home / Impact</div>
+          <div class="crumbs"><a href="index.html">Home</a><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>Impact</span></div>
           <div class="eyebrow">Our Impact</div>
           <h1 class="display">Impact Dashboard</h1>
         </div>
       </section>
-      <section class="section impact-overview">
-        <div class="container">
-          <div class="eyebrow">Our Impact</div>
-          <h2 class="display">As of September 2025</h2>
-          <div class="stats">
-            <div class="stat light-stat">
-              <strong>&gt;₦452bn</strong><span>Total loans guaranteed</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>104,881</strong><span>MSMEs supported directly</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>7,465</strong><span>Active guarantees</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>191,798</strong><span>Total jobs supported</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>21%</strong><span>Female borrowers</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>15%</strong><span>Youth borrowers</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>70,000+</strong><span>MSMEs supported indirectly</span>
-            </div>
-            <div class="stat light-stat">
-              <strong>Aa</strong><span>Agusto &amp; Co. rating</span>
-            </div>
+      <section class="impact-metrics-section">
+        <div class="container impact-metrics-wrap">
+          <p class="impact-as-of motion-ready">As of September 2025</p>
+          <div class="impact-stats-grid">
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 50ms">
+              <dt>Total Loans Guaranteed</dt>
+              <dd><span class="impact-count" data-count-target="654" data-count-prefix="₦" data-count-suffix="bn+">₦654bn+</span></dd>
+              <p><span class="impact-count" data-count-target="14" data-count-prefix="+" data-count-suffix="% increase vs Mar 2026">+14% increase vs Mar 2026</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 130ms">
+              <dt>MSMEs Supported Directly</dt>
+              <dd><span class="impact-count" data-count-target="104104">104,104</span></dd>
+              <p><span class="impact-count" data-count-target="8" data-count-prefix="+" data-count-suffix="% vs Mar 2026">+8% vs Mar 2026</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 210ms">
+              <dt>No of Guarantees Issued</dt>
+              <dd><span class="impact-count" data-count-target="144604">144,604</span></dd>
+              <p><span class="impact-count" data-count-target="8" data-count-prefix="+" data-count-suffix="% vs Mar 2026">+8% vs Mar 2026</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 290ms">
+              <dt>Jobs Supported</dt>
+              <dd><span class="impact-count" data-count-target="239626">239,626</span></dd>
+              <p><span class="impact-count" data-count-target="7" data-count-prefix="+" data-count-suffix="% vs Mar 2026">+7% vs Mar 2026</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready">
+              <dt>Guarantees to Female</dt>
+              <dd><span class="impact-count" data-count-target="22" data-count-suffix="%">22%</span></dd>
+              <p><span class="impact-count" data-count-target="30222" data-count-prefix="≈" data-count-suffix=" women supported">≈30,222 women supported</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 80ms">
+              <dt>Guarantees to Youths</dt>
+              <dd><span class="impact-count" data-count-target="11" data-count-suffix="%">11%</span></dd>
+              <p><span class="impact-count" data-count-target="21024" data-count-prefix="≈" data-count-suffix=" youth supported">≈21,024 youth supported</span></p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 160ms">
+              <dt>MSMEs Supported Indirectly</dt>
+              <dd><span class="impact-count" data-count-target="83000" data-count-suffix="+">83,000+</span></dd>
+              <p>Via blanket &amp; portfolio guarantees</p>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 240ms">
+              <dt>Augusto &amp; Co. Rating</dt>
+              <dd>Aa+</dd>
+              <p><span class="impact-count" data-count-target="2026" data-count-suffix=" assessment">2026 assessment</span></p>
+            </dl>
           </div>
-          <div class="stats secondary-stats">
-            <div class="stat light-stat"><strong>36</strong><span>States + FCT covered</span></div>
-            <div class="stat light-stat"><strong>23</strong><span>Accredited PFIs</span></div>
-          </div>
-        </div>
-      </section>
-      <section class="section">
-        <div class="container">
-          <div class="eyebrow">Sector reach</div>
-          <h2 class="display">Capital where it matters.</h2>
-          <div class="table-wrap">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Sector</th>
-                  <th>Loans guaranteed</th>
-                  <th>MSMEs</th>
-                  <th>Jobs</th>
-                  <th>Female %</th>
-                  <th>Youth %</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Trade &amp; Commerce</td>
-                  <td>₦152bn</td>
-                  <td>35,840</td>
-                  <td>58,420</td>
-                  <td>28%</td><td>22%</td>
-                  <td>Active</td>
-                </tr>
-                <tr>
-                  <td>Agriculture</td>
-                  <td>₦118bn</td>
-                  <td>28,320</td>
-                  <td>42,180</td>
-                  <td>18%</td><td>14%</td>
-                  <td>Active</td>
-                </tr>
-                <tr>
-                  <td>Manufacturing</td>
-                  <td>₦86bn</td>
-                  <td>16,780</td>
-                  <td>36,540</td>
-                  <td>12%</td><td>10%</td>
-                  <td>Active</td>
-                </tr>
-                <tr>
-                  <td>Services</td>
-                  <td>₦54bn</td>
-                  <td>13,420</td>
-                  <td>29,860</td>
-                  <td>31%</td><td>19%</td>
-                  <td>Active</td>
-                </tr>
-                <tr>
-                  <td>Technology</td>
-                  <td>₦22bn</td>
-                  <td>6,240</td>
-                  <td>24,798</td>
-                  <td>24%</td><td>48%</td>
-                  <td>Growing</td>
-                </tr>
-                <tr><td>Healthcare</td><td>₦12bn</td><td>2,940</td><td>—</td><td>42%</td><td>18%</td><td>Emerging</td></tr>
-                <tr><td>Education</td><td>₦8bn</td><td>1,341</td><td>—</td><td>38%</td><td>16%</td><td>Emerging</td></tr>
-              </tbody>
-            </table>
+          <div class="impact-secondary-grid">
+            <dl class="impact-stat-card motion-ready">
+              <dt>States + FCT covered</dt>
+              <dd><span class="impact-count" data-count-target="36">36</span></dd>
+            </dl>
+            <dl class="impact-stat-card motion-ready" style="--reveal-delay: 80ms">
+              <dt>Accredited PFIs</dt>
+              <dd><span class="impact-count" data-count-target="23">23</span></dd>
+            </dl>
           </div>
         </div>
       </section>
-      <section class="section geography-section">
-        <div class="container">
-          <div class="eyebrow">Geographic reach</div>
-          <h2 class="display">MSMEs by geopolitical zone</h2>
-          <div class="grid grid-3 geography-grid">
-            <div class="zone-card"><span>South West</span><strong>31,464</strong></div>
-            <div class="zone-card"><span>North West</span><strong>22,025</strong></div>
-            <div class="zone-card"><span>North Central</span><strong>18,879</strong></div>
-            <div class="zone-card"><span>South South</span><strong>16,782</strong></div>
-            <div class="zone-card"><span>South East</span><strong>10,488</strong></div>
-            <div class="zone-card"><span>North East</span><strong>5,243</strong></div>
+      <section class="impact-pfi-section">
+        <div class="container impact-section-wrap">
+          <div class="impact-section-heading motion-ready">
+            <span class="eyebrow">PFI performance</span>
+            <h2 class="display">Participating financial institutions by category</h2>
+          </div>
+          <div class="impact-pfi-grid">
+            <article class="impact-pfi-card motion-ready"><p class="impact-count" data-count-target="15" data-count-suffix=" PFIs">15 PFIs</p><p>Commercial Banks</p></article>
+            <article class="impact-pfi-card motion-ready" style="--reveal-delay: 80ms"><p class="impact-count" data-count-target="3" data-count-suffix=" PFIs">3 PFIs</p><p>Merchant Banks</p></article>
+            <article class="impact-pfi-card motion-ready" style="--reveal-delay: 160ms"><p class="impact-count" data-count-target="2" data-count-suffix=" PFIs">2 PFIs</p><p>Microfinance Banks</p></article>
+            <article class="impact-pfi-card motion-ready" style="--reveal-delay: 240ms"><p class="impact-count" data-count-target="1" data-count-suffix=" PFI">1 PFI</p><p>Development Finance</p></article>
+            <article class="impact-pfi-card motion-ready" style="--reveal-delay: 0ms"><p class="impact-count" data-count-target="2" data-count-suffix=" PFIs">2 PFIs</p><p>Non-Interest Banks</p></article>
           </div>
         </div>
       </section>
-      <section class="section pfi-performance">
-        <div class="container">
-          <div class="eyebrow">PFI performance</div><h2 class="display">Participating financial institutions by category</h2>
-          <div class="grid grid-3">
-            <div class="card"><h3>15 PFIs</h3><p>Commercial Banks</p></div>
-            <div class="card"><h3>3 PFIs</h3><p>Merchant Banks</p></div>
-            <div class="card"><h3>2 PFIs</h3><p>Microfinance Banks</p></div>
-            <div class="card"><h3>1 PFI</h3><p>Development Finance</p></div>
-            <div class="card"><h3>2 PFIs</h3><p>Non-Interest Banks</p></div>
+      <section class="impact-ratings-section">
+        <div class="container impact-section-wrap">
+          <div class="impact-section-heading motion-ready">
+            <span class="eyebrow">Ratings &amp; certifications</span>
+            <h2 class="display">Credit ratings &amp; certifications</h2>
           </div>
-        </div>
-      </section>
-      <section class="section">
-        <div class="container">
-          <div class="eyebrow">Ratings &amp; certifications</div><h2 class="display">Credit ratings &amp; certifications</h2>
-          <div class="grid grid-4 certification-cards">
-            <article class="card"><img src="assets/ratings-agu.png" alt="Agusto &amp; Co."><h3>Agusto &amp; Co.</h3><p>AA Rating 2025</p></article>
-            <article class="card"><img src="assets/ratings-iso1.png" alt="ISO 27001"><h3>ISO 27001:2022</h3><p>Information Security Management System (ISMS)</p></article>
-            <article class="card"><img src="assets/ratings-iso2.png" alt="ISO 22301"><h3>ISO 22301:2019</h3><p>Business Continuity Management System (BCMS)</p></article>
-            <article class="card"><img src="assets/ratings-iso3.png" alt="ISO 20000"><h3>ISO 20000:2018</h3><p>Service Management System (ITSMS)</p></article>
+          <div class="impact-ratings-grid">
+            <article class="impact-rating-card motion-ready">
+              <p class="display impact-rating-title">Aa+</p>
+              <p>Augusto &amp; Co. — 2026 Assessment</p>
+            </article>
+            <article class="impact-rating-card motion-ready" style="--reveal-delay: 80ms">
+              <p class="display">ISO 27001</p>
+              <p>Information Security Management System — Certified 2022</p>
+            </article>
+            <article class="impact-rating-card motion-ready" style="--reveal-delay: 160ms">
+              <p class="display">ISO 22301</p>
+              <p>Business Continuity Management System — Certified 2019</p>
+            </article>
+            <article class="impact-rating-card motion-ready" style="--reveal-delay: 240ms">
+              <p class="display">ISO 20000</p>
+              <p>IT Service Management System — Certified 2018</p>
+            </article>
           </div>
         </div>
       </section>
