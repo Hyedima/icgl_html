@@ -203,6 +203,67 @@ function installSharedLayout() {
   onScroll();
 }
 
+function installNewsFilters() {
+  const search = document.querySelector("[data-news-search]");
+  const category = document.querySelector("[data-news-category]");
+  const list = document.querySelector("[data-news-list]");
+  const rows = [...document.querySelectorAll("[data-news-row]")];
+  const count = document.querySelector("[data-news-count]");
+  const clear = document.querySelector("[data-news-clear]");
+  const empty = document.querySelector("[data-news-empty]");
+  if (!search || !category || !list || !count || !clear || !empty) return;
+
+  const updateResults = () => {
+    const query = search.value.trim().toLowerCase();
+    const selectedCategory = category.value;
+    let visibleCount = 0;
+    rows.forEach((row) => {
+      const matchesQuery = row.dataset.search.toLowerCase().includes(query);
+      const matchesCategory = selectedCategory === "all" || row.dataset.category === selectedCategory;
+      const visible = matchesQuery && matchesCategory;
+      row.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+    count.textContent = `${visibleCount} ${visibleCount === 1 ? "story" : "stories"} found`;
+    clear.hidden = selectedCategory === "all" && !search.value;
+    list.hidden = visibleCount === 0;
+    empty.hidden = visibleCount !== 0;
+  };
+
+  search.addEventListener("input", updateResults);
+  category.addEventListener("change", updateResults);
+  clear.addEventListener("click", () => {
+    search.value = "";
+    category.value = "all";
+    updateResults();
+    search.focus();
+  });
+  updateResults();
+}
+
+function installNewsStory() {
+  if (!document.body.hasAttribute("data-news-story-page")) return;
+
+  const slug = new URLSearchParams(window.location.search).get("slug");
+  const template = [...document.querySelectorAll("template[data-news-story]")].find(
+    (item) => item.dataset.newsStory === slug
+  );
+  if (!template) {
+    window.location.replace("resources-news.html");
+    return;
+  }
+
+  const title = template.dataset.title;
+  const category = template.dataset.category;
+  if (!title || !category) throw new Error("The selected news story is missing its title or category.");
+  document.title = `${title} | ICGL`;
+  document.querySelector("[data-news-story-title]").textContent = title;
+  document.querySelector("[data-news-story-category]").textContent = category;
+  document.querySelector("[data-news-story-breadcrumbs]").textContent =
+    `Home / Resources / News / ${title}`;
+  document.querySelector("[data-news-story-content]").replaceChildren(template.content.cloneNode(true));
+}
+
 const routesByPath = {
   about: "about.html", services: "services.html", impact: "impact.html",
   eligibility: "eligibility.html", career: "career.html", contact: "contact.html",
@@ -247,22 +308,26 @@ function installPageMotion() {
     const eyebrow = heroContent.querySelector(".eyebrow");
     const title = heroContent.querySelector("h1");
     const crumbs = heroContent.querySelector(".crumbs");
-    if (eyebrow && title && crumbs) {
-      const labels = crumbs.textContent.split("/").map((label) => label.trim()).filter(Boolean);
+    if (title && crumbs) {
+      const labels = crumbs.textContent.split(" / ").map((label) => label.trim()).filter(Boolean);
       crumbs.replaceChildren();
       const home = document.createElement("a");
       home.href = "index.html";
       home.textContent = "Home";
       crumbs.append(home);
+      const isNewsStory = document.body.hasAttribute("data-news-story-page");
+      const isNewsPage = isNewsStory || document.body.hasAttribute("data-news-list-page");
       labels.slice(1).forEach((label) => {
         const divider = document.createElement("span");
         divider.setAttribute("aria-hidden", "true");
         divider.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
-        const current = document.createElement("span");
+        const isNewsLink = isNewsPage && (label === "Resources" || (isNewsStory && label === "News"));
+        const current = document.createElement(isNewsLink ? "a" : "span");
+        if (isNewsLink) current.setAttribute("href", "resources-news.html");
         current.textContent = label;
         crumbs.append(divider, current);
       });
-      heroContent.prepend(eyebrow);
+      if (eyebrow) heroContent.prepend(eyebrow);
       title.after(crumbs);
     }
     const layer = document.createElement("div");
@@ -618,10 +683,12 @@ function installPeriodSelector() {
 }
 
 installSharedLayout();
+installNewsStory();
 installPageMotion();
 installFaqs();
 installCareerTestimonials();
 installForms();
+installNewsFilters();
 installMarquees();
 installAuthentication();
 installPeriodSelector();

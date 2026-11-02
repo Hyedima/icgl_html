@@ -3,82 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News | ICGL</title>
+    <title>News &amp; Updates | ICGL</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages/resources.css" />
   </head>
-  <body>
+  <body data-news-list-page>
     <header class="site-header">
       <nav class="nav">
-        <a class="logo" href="index.html"
-          ><img
-            src="assets/icgl-logo.png"
-            alt="Impact Credit Guarantee Limited"
-        /></a>
+        <a class="logo" href="index.html">
+          <img src="assets/icgl-logo.png" alt="Impact Credit Guarantee Limited" />
+        </a>
         <div class="nav-links">
-          <a href="index.html">Home</a><a href="about.html">About</a
-          ><a href="services.html">Services</a><a href="impact.html">Impact</a
-          ><a class="active" href="resources-news.html">Resources</a
-          ><a href="career.html">Career</a><a href="contact.html">Contact</a>
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="services.html">Services</a><a href="impact.html">Impact</a>
+          <a class="active" href="resources-news.html">Resources</a>
+          <a href="career.html">Career</a><a href="contact.html">Contact</a>
         </div>
         <div class="nav-actions">
-          <a class="btn btn-dark" href="eligibility.html">Check eligibility ↗</a
-          ><a href="admin-sign-in.html">Admin sign in</a>
+          <a class="btn btn-dark" href="eligibility.html">Check eligibility ↗</a>
+          <a href="admin-sign-in.html">Admin sign in</a>
         </div>
-        <button class="nav-toggle" data-menu-toggle="#mobile-menu">☰</button>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu">☰</button>
       </nav>
       <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Home</a><a href="about.html">About</a
-        ><a href="services.html">Services</a><a href="impact.html">Impact</a
-        ><a href="resources-news.html">Resources</a
-        ><a href="career.html">Career</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="about.html">About</a>
+        <a href="services.html">Services</a><a href="impact.html">Impact</a>
+        <a href="resources-news.html">Resources</a><a href="career.html">Career</a>
+        <a href="contact.html">Contact</a>
       </div>
     </header>
     <main>
       <section class="page-hero resource-hero">
         <div class="container">
-          <div class="crumbs">Home / Resources / News</div>
-          <div class="eyebrow">Resources</div>
           <h1 class="display">News &amp; Updates</h1>
+          <div class="crumbs">Home / Resources / News</div>
         </div>
       </section>
-      <section class="section resource-section">
-        <div class="container grid grid-3">
-          <article class="card resource-card news-list-card">
-            <img src="assets/who-we-are-web.jpg" alt="">
-            <div><div class="eyebrow">Press Release</div><time>14 March 2026 · 4 min read</time>
-              <h3>ICGL Achieves AA Credit Rating from Agusto &amp; Co. for Third Consecutive Year</h3>
-              <p>Impact Credit Guarantee Limited (ICGL) has once again been assigned an AA credit rating by Agusto &amp; Co., reflecting ICGL's strong financial position, robust governance framework, and consistent track record of honouring guarantee obligations.</p>
+      <section class="news-section">
+        <div class="news-container">
+          <div class="news-filter-panel">
+            <div class="news-filter-heading">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h9m4 0h3M4 17h3m4 0h9M13 4v6M7 14v6" />
+              </svg>
+              <span>Filter news</span>
             </div>
-          </article>
-          <article class="card resource-card news-list-card">
-            <img src="assets/hero-2-web.jpg" alt="">
-            <div><div class="eyebrow">Partnership</div><time>02 February 2026 · 3 min read</time>
-              <h3>ICGL Signs New Guarantee Agreement with Three Leading Microfinance Banks</h3>
-              <p>ICGL has expanded its network of Participating Financial Institutions, extending guaranteed lending capacity to underserved rural and semi-urban communities.</p>
+            <div class="news-filter-controls">
+              <label class="news-search">
+                <span class="sr-only">Search news</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-4-4" />
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search by keyword..."
+                  autocomplete="off"
+                  data-news-search
+                />
+              </label>
+              <label>
+                <span class="sr-only">Filter by category</span>
+                <select data-news-category>
+                  <option value="all">All categories</option>
+                  <option value="Company information">Company information</option>
+                  <option value="Guarantee information">Guarantee information</option>
+                  <option value="Careers">Careers</option>
+                </select>
+              </label>
             </div>
-          </article>
-          <article class="card resource-card news-list-card">
-            <img src="assets/kvp-img-web.jpg" alt="">
-            <div><div class="eyebrow">Announcement</div><time>18 January 2026 · 5 min read</time>
-              <h3>ICGL Launches Enhanced Agricultural Guarantee Product for Smallholder Farmers</h3>
-              <p>A new guarantee product designed to support smallholder farmers and agribusinesses has expanded coverage for loans in the agricultural value chain.</p>
+            <div class="news-filter-status">
+              <span data-news-count aria-live="polite">3 stories found</span>
+              <button type="button" data-news-clear hidden>Clear filters</button>
             </div>
-          </article>
-          <article class="card resource-card news-list-card">
-            <img src="assets/career-team-web.jpg" alt="">
-            <div><div class="eyebrow">Event</div><time>10 December 2025 · 4 min read</time>
-              <h3>ICGL Hosts Annual PFI Forum on MSME Credit Risk Management</h3>
-              <p>More than 120 representatives from PFIs gathered to discuss best practices in MSME credit risk management and the evolving role of guarantee instruments.</p>
-            </div>
-          </article>
+          </div>
+
+          <div class="news-list" data-news-list>
+            <article
+              class="news-row reveal"
+              data-news-row
+              data-category="Company information"
+              data-search="icgl mandate sharing risk widen access finance company information company overview 2 min read impact credit guarantee limited wholly owned subsidiary development bank nigeria plc established provide guarantees loans eligible msmes small corporates participating financial institutions a risk-sharing role established support development bank nigeria second mandate providing risk-sharing facilities participating financial institutions pfis help alleviate financing constraints faced by msmes small corporates nigeria through credit guarantees shares part lending risk eligible pfis helps lenders extend credit viable businesses otherwise face barriers finance financing context official about us page cites findings 2017 national survey micro small &amp; medium enterprises nigeria had 41.5 million msmes contributing 49.9% gdp fewer than 5% access to finance historical figures 2017 survey not current estimates"
+            >
+              <a class="news-row-link" href="resources-news-story.html?slug=icgl-mandate">
+                <div>
+                  <div class="news-meta">
+                    <span class="news-category">Company information</span>
+                    <span>Company overview</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>2 min read</span>
+                  </div>
+                  <h2>ICGL’s mandate: sharing risk to widen access to finance</h2>
+                  <p>
+                    Impact Credit Guarantee Limited is a wholly owned subsidiary of the Development Bank of Nigeria Plc, established to provide guarantees on loans to eligible MSMEs and small corporates through participating financial institutions.
+                  </p>
+                  <span class="news-read-more">Read full story <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+            <article
+              class="news-row reveal"
+              data-news-row
+              data-category="Guarantee information"
+              data-search="what to know about icgl guarantee characteristics guarantee information product information 2 min read published guarantee characteristics outline maximum cover facility tenor loan sizing eligible business segments published guarantee parameters maximum guarantee cover 60% loan disbursed maximum loan size defined from time to time published maximum tenor five years extensions up to eight years available special projects stated eligible segment covers businesses within msme sector confirm current terms with icgl characteristics published official website pfis should confirm current product terms eligibility requirements directly specific facility"
+            >
+              <a class="news-row-link" href="resources-news-story.html?slug=guarantee-characteristics">
+                <div>
+                  <div class="news-meta">
+                    <span class="news-category">Guarantee information</span>
+                    <span>Product information</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>2 min read</span>
+                  </div>
+                  <h2>What to know about ICGL’s guarantee characteristics</h2>
+                  <p>
+                    ICGL’s published guarantee characteristics outline the maximum cover, facility tenor, loan sizing and eligible business segments for its guarantee support.
+                  </p>
+                  <span class="news-read-more">Read full story <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+            <article
+              class="news-row reveal"
+              data-news-row
+              data-category="Careers"
+              data-search="icgl advertises monitoring and evaluation mis manager careers hiring announcement 2 min read linkedin company page describes role focused impact measurement performance data reporting across pfi msme stakeholders about the role public hiring post says successful candidate lead design implementation monitoring evaluation frameworks oversee management information system data support timely collection validation reporting performance information pfis msmes internal stakeholders role intended help icgl track performance against developmental goals inform strategic decisions strengthen accountability internal external stakeholders how to apply linkedin post asks applicants send cv careers@impactguaranteeng.com m&e manager email subject only shortlisted candidates contacted post does not state closing date check original listing for current status"
+            >
+              <a class="news-row-link" href="resources-news-story.html?slug=monitoring-evaluation-mis-manager">
+                <div>
+                  <div class="news-meta">
+                    <span class="news-category">Careers</span>
+                    <span>Hiring announcement</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <span>2 min read</span>
+                  </div>
+                  <h2>ICGL advertises for a Monitoring and Evaluation/MIS Manager</h2>
+                  <p>
+                    ICGL’s LinkedIn company page describes a role focused on impact measurement, performance data and reporting across its PFI and MSME stakeholders.
+                  </p>
+                  <span class="news-read-more">Read full story <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="news-empty-state" data-news-empty hidden>
+            <h2>No news found</h2>
+            <p>Try another keyword, year, or category.</p>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
       <div class="container footer-bottom">
-        <span>© 2026 Impact Credit Guarantee Limited</span
-        ><a href="index.html">Return home</a>
+        <span>© 2026 Impact Credit Guarantee Limited</span>
+        <a href="index.html">Return home</a>
       </div>
     </footer>
     <script src="interaction.js"></script>
