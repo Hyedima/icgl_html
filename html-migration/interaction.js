@@ -349,6 +349,76 @@ function installFaqs() {
   });
 }
 
+function installCareerTestimonials() {
+  const carousel = document.querySelector("[data-career-carousel]");
+  if (!carousel) return;
+
+  const slides = [...carousel.querySelectorAll("[data-testimonial-slide]")];
+  const dots = [...carousel.querySelectorAll("[data-testimonial-dot]")];
+  const previous = carousel.querySelector("[data-testimonial-previous]");
+  const next = carousel.querySelector("[data-testimonial-next]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeIndex = slides.findIndex((slide) => !slide.hidden);
+  let paused = false;
+  let timer;
+
+  if (!slides.length || activeIndex < 0 || dots.length !== slides.length || !previous || !next) {
+    throw new Error("Career testimonials are missing required slides or controls.");
+  }
+
+  const scheduleNext = () => {
+    window.clearTimeout(timer);
+    if (reduceMotion || paused) return;
+    timer = window.setTimeout(() => {
+      showTestimonial(activeIndex + 1, 1);
+    }, 6500);
+  };
+  const showTestimonial = (index, direction) => {
+    const nextIndex = (index + slides.length) % slides.length;
+    if (nextIndex === activeIndex) return;
+
+    slides[activeIndex].hidden = true;
+    activeIndex = nextIndex;
+    const activeSlide = slides[activeIndex];
+    activeSlide.hidden = false;
+    activeSlide.classList.remove("is-entering-from-left", "is-entering-from-right");
+    if (!reduceMotion) {
+      void activeSlide.offsetWidth;
+      activeSlide.classList.add(direction > 0 ? "is-entering-from-right" : "is-entering-from-left");
+    }
+    dots.forEach((dot, dotIndex) => {
+      dot.setAttribute("aria-current", String(dotIndex === activeIndex));
+    });
+    scheduleNext();
+  };
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showTestimonial(index, index > activeIndex ? 1 : -1);
+    });
+  });
+  previous.addEventListener("click", () => showTestimonial(activeIndex - 1, -1));
+  next.addEventListener("click", () => showTestimonial(activeIndex + 1, 1));
+  carousel.addEventListener("mouseenter", () => {
+    paused = true;
+    scheduleNext();
+  });
+  carousel.addEventListener("mouseleave", () => {
+    paused = false;
+    scheduleNext();
+  });
+  carousel.addEventListener("focusin", () => {
+    paused = true;
+    scheduleNext();
+  });
+  carousel.addEventListener("focusout", (event) => {
+    if (carousel.contains(event.relatedTarget)) return;
+    paused = false;
+    scheduleNext();
+  });
+  scheduleNext();
+}
+
 function installForms() {
   document.querySelectorAll("[data-demo-form]").forEach((form) => {
     form.addEventListener("submit", (event) => {
@@ -550,6 +620,7 @@ function installPeriodSelector() {
 installSharedLayout();
 installPageMotion();
 installFaqs();
+installCareerTestimonials();
 installForms();
 installMarquees();
 installAuthentication();

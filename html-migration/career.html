@@ -7,110 +7,274 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages/pages.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="logo" href="index.html"
-          ><img
-            src="assets/icgl-logo.png"
-            alt="Impact Credit Guarantee Limited"
-        /></a>
-        <div class="nav-links">
-          <a href="index.html">Home</a><a href="about.html">About</a
-          ><a href="services.html">Services</a><a href="impact.html">Impact</a
-          ><a href="resources-news.html">Resources</a
-          ><a class="active" href="career.html">Career</a
-          ><a href="contact.html">Contact</a>
-        </div>
-        <div class="nav-actions">
-          <a class="btn btn-dark" href="eligibility.html">Check eligibility ↗</a
-          ><a href="admin-sign-in.html">Admin sign in</a>
-        </div>
-        <button class="nav-toggle" data-menu-toggle="#mobile-menu">☰</button>
-      </nav>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Home</a><a href="about.html">About</a
-        ><a href="services.html">Services</a><a href="impact.html">Impact</a
-        ><a href="resources-news.html">Resources</a
-        ><a href="career.html">Career</a><a href="contact.html">Contact</a>
-      </div>
-    </header>
+  <body class="career-page">
     <main>
       <section class="page-hero">
         <div class="container">
-          <div class="crumbs">Home / Career</div>
-          <div class="eyebrow">ICGL Career</div>
+          <span class="eyebrow">ICGL Career</span>
           <h1 class="display">Unlock Your Potential</h1>
+          <div class="crumbs">Home / Career</div>
         </div>
       </section>
-      <section class="section">
-        <div class="container split">
-          <div>
-            <p class="lead">
-              Join Impact Credit Guarantee Limited and help us bridge the financing gap. Take the first step towards your dream career in finance and play a pivotal role in driving economic growth and financial inclusion.
+
+      <section class="career-intro">
+        <div class="container career-intro-wrap">
+          <div class="reveal">
+            <p class="career-intro-copy">
+              Join Impact Credit Guarantee Limited and help us bridge the
+              financing gap. Take the first step towards your dream career in
+              finance and play a pivotal role in driving economic growth and
+              financial inclusion.
             </p>
-            <a class="btn btn-dark" href="#vacancies">Join our team ↗</a>
+            <a class="btn btn-dark career-join-link" href="#vacancies">
+              Join our team
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10" />
+              </svg>
+            </a>
           </div>
-          <img src="assets/career-team-web.jpg" alt="ICGL team" />
-        </div>
-      </section>
-      <section class="section career-highlights">
-        <div class="container">
-          <div class="eyebrow">Why join us</div>
-          <h2 class="display">A dynamic and supportive work environment</h2>
-          <p class="lead">At ICGL, we foster continuous learning, diversity, and career growth — giving motivated people a platform to collaboratively tackle challenging projects and contribute to national development.</p>
-          <div class="grid grid-3">
-            <article class="card"><span class="round-icon">↗</span><h3>Continuous learning</h3><p>Build your capabilities through challenging, meaningful work and ongoing professional development.</p></article>
-            <article class="card"><span class="round-icon">◎</span><h3>Diversity and inclusion</h3><p>Bring your perspective to a team working to expand financial inclusion across Nigeria.</p></article>
-            <article class="card"><span class="round-icon">✳</span><h3>Career growth</h3><p>Grow your career while contributing to national development and MSME opportunity.</p></article>
-          </div>
-        </div>
-      </section>
-      <section class="career-testimonial">
-        <div class="container">
-          <div class="testimonial-avatar">OA</div>
-          <div><span class="eyebrow">Staff testimonial</span>
-            <blockquote class="display">“In a year, I have gained invaluable industry experience, technical skills, and a broader understanding of the field of Cybersecurity.”</blockquote>
-            <p>Oluwatowo Akinbode — Information Security Analyst</p>
+
+          <div class="career-team-frame reveal" style="--reveal-delay: 120ms">
+            <img class="career-team-photo" src="assets/career.jpg" alt="Our team at work" />
+            <div class="career-team-tint" aria-hidden="true"></div>
+            <div class="career-team-grid" aria-hidden="true"></div>
+            <div class="career-team-scanline" aria-hidden="true"></div>
+            <div class="career-team-border" aria-hidden="true"></div>
+            <span class="career-team-corner career-team-corner-bottom" aria-hidden="true"></span>
+            <span class="career-team-corner career-team-corner-top" aria-hidden="true"></span>
           </div>
         </div>
       </section>
-      <section
-        class="section"
-        style="background: var(--lime-light)"
-        id="vacancies">
-        <div class="container">
-          <div class="eyebrow">Open roles</div>
-          <h2 class="display">Available Vacancies</h2>
-          <div class="grid grid-2">
-            <div class="card">
-              <h3>Senior Credit Risk Analyst</h3>
-              <p>Lagos · Full time</p>
-              <a
-                class="btn btn-ghost"
-                href="career-senior-credit-risk-analyst.html"
-                >View role ↗</a
-              >
+
+      <section class="career-benefits">
+        <div class="container career-section-wrap">
+          <div class="reveal">
+            <span class="eyebrow">Why join us</span>
+            <h2 class="display">A dynamic and supportive work environment</h2>
+            <p class="career-section-lead">
+              At ICGL, we foster continuous learning, diversity, and career
+              growth &mdash; giving motivated people a platform to
+              collaboratively tackle challenging projects and contribute to
+              national development.
+            </p>
+          </div>
+          <div class="career-benefit-grid">
+            <article class="career-benefit-card card reveal">
+              <h3>Work Environment</h3>
+              <p>
+                Join a collaborative and supportive team working together on
+                meaningful challenges that expand access to finance for Nigerian
+                businesses.
+              </p>
+            </article>
+            <article class="career-benefit-card card reveal" style="--reveal-delay: 80ms">
+              <h3>Work-Life Balance</h3>
+              <p>
+                Build a rewarding career in an environment that values wellbeing,
+                balance, and sustainable performance.
+              </p>
+            </article>
+            <article class="career-benefit-card card reveal" style="--reveal-delay: 160ms">
+              <h3>Career Growth &amp; Development</h3>
+              <p>
+                Grow your expertise through continuous learning, varied projects,
+                and opportunities to contribute to ICGL&rsquo;s mission and
+                national development.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="career-values">
+        <div class="container career-values-wrap">
+          <div class="reveal">
+            <span class="eyebrow">What guides us</span>
+            <h2 class="display">Our core values</h2>
+            <p class="career-values-lead">
+              The principles that shape how we work, lead, and build lasting
+              impact across the communities we serve.
+            </p>
+          </div>
+          <div class="career-values-grid">
+            <article class="career-value-card card reveal">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg>
+                </span>
+                <span class="career-value-number">01</span>
+              </div>
+              <h3>Integrity</h3>
+              <p>We act with transparency, honesty, and consistency in every relationship and decision.</p>
+            </article>
+            <article class="career-value-card card reveal" style="--reveal-delay: 80ms">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+                </span>
+                <span class="career-value-number">02</span>
+              </div>
+              <h3>Accountability</h3>
+              <p>We take ownership of our commitments and stay focused on outcomes that matter.</p>
+            </article>
+            <article class="career-value-card card reveal" style="--reveal-delay: 160ms">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /><path d="m21 3 1 11h-2" /><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /><path d="M3 4h8" /></svg>
+                </span>
+                <span class="career-value-number">03</span>
+              </div>
+              <h3>Collaboration</h3>
+              <p>We build trusted partnerships that make shared progress possible.</p>
+            </article>
+            <article class="career-value-card card reveal">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" /><circle cx="12" cy="8" r="6" /></svg>
+                </span>
+                <span class="career-value-number">04</span>
+              </div>
+              <h3>Excellence</h3>
+              <p>We pursue high standards in our analysis, service, and execution.</p>
+            </article>
+            <article class="career-value-card card reveal" style="--reveal-delay: 80ms">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
+                </span>
+                <span class="career-value-number">05</span>
+              </div>
+              <h3>Innovation</h3>
+              <p>We keep improving how we share risk and expand access to finance.</p>
+            </article>
+            <article class="career-value-card card reveal" style="--reveal-delay: 160ms">
+              <div class="career-value-top">
+                <span class="career-value-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                </span>
+                <span class="career-value-number">06</span>
+              </div>
+              <h3>Inclusion</h3>
+              <p>We believe viable businesses everywhere deserve a fair chance to grow.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="career-testimonials">
+        <div class="container career-testimonials-wrap">
+          <div
+            class="career-carousel reveal"
+            data-career-carousel
+            aria-roledescription="carousel"
+            aria-label="Staff testimonials"
+          >
+            <div class="career-testimonial-slide" data-testimonial-slide aria-live="polite">
+              <img src="assets/career1.jpg" alt="Oluwatowo Akinbode" />
+              <div>
+                <span class="eyebrow">Staff testimonial</span>
+                <blockquote>
+                  &ldquo;In a year, I have gained invaluable industry experience,
+                  technical skills, and a broader understanding of the field of
+                  Cybersecurity.&rdquo;
+                </blockquote>
+                <p>Oluwatowo Akinbode &mdash; Information Security Analyst</p>
+              </div>
             </div>
-            <div class="card">
-              <h3>Relationship Manager, PFIs</h3>
-              <p>Lagos · Full time</p>
-              <a
-                class="btn btn-ghost"
-                href="career-relationship-manager-pfis.html"
-                >View role ↗</a
-              >
+            <div class="career-testimonial-slide" data-testimonial-slide aria-live="polite" hidden>
+              <img src="assets/career1_.jpg" alt="Amina Yusuf" />
+              <div>
+                <span class="eyebrow">Staff testimonial</span>
+                <blockquote>
+                  &ldquo;ICGL has given me the space to grow, collaborate with
+                  brilliant people, and make a meaningful contribution to
+                  financial inclusion.&rdquo;
+                </blockquote>
+                <p>Amina Yusuf &mdash; Risk &amp; Portfolio Analyst</p>
+              </div>
+            </div>
+            <div class="career-testimonial-slide" data-testimonial-slide aria-live="polite" hidden>
+              <img src="assets/career-team.png" alt="Chinedu Okafor" />
+              <div>
+                <span class="eyebrow">Staff testimonial</span>
+                <blockquote>
+                  &ldquo;Every project brings a new challenge and a new
+                  opportunity to learn. It is rewarding to see our work create
+                  real impact for businesses.&rdquo;
+                </blockquote>
+                <p>Chinedu Okafor &mdash; Programme Officer</p>
+              </div>
+            </div>
+            <div class="career-carousel-controls">
+              <div class="career-carousel-dots" aria-label="Choose testimonial">
+                <button type="button" aria-label="Show testimonial 1" aria-current="true" data-testimonial-dot></button>
+                <button type="button" aria-label="Show testimonial 2" aria-current="false" data-testimonial-dot></button>
+                <button type="button" aria-label="Show testimonial 3" aria-current="false" data-testimonial-dot></button>
+              </div>
+              <div class="career-carousel-arrows">
+                <button type="button" aria-label="Previous testimonial" data-testimonial-previous>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button type="button" aria-label="Next testimonial" data-testimonial-next>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="career-vacancies" id="vacancies">
+        <div class="container career-section-wrap">
+          <h2 class="display reveal">Available Vacancies</h2>
+          <div class="career-vacancy-table-wrap reveal">
+            <table class="career-vacancy-table">
+              <thead>
+                <tr>
+                  <th scope="col">Role</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Application Deadline</th>
+                  <th scope="col" aria-hidden="true"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="mailto:info@impactguaranteeng.com?subject=Finance%20Manager">
+                      Finance Manager
+                      <span class="visually-hidden"> — email about this role</span>
+                    </a>
+                  </td>
+                  <td>Lagos</td>
+                  <td>3 April, 2026</td>
+                  <td class="career-vacancy-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="mailto:info@impactguaranteeng.com?subject=Head%20of%20Risk%20Management">
+                      Head of Risk Management
+                      <span class="visually-hidden"> — email about this role</span>
+                    </a>
+                  </td>
+                  <td>Lagos</td>
+                  <td>1 May, 2026</td>
+                  <td class="career-vacancy-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="career-application-note">
+            To apply, reach out via
+            <a href="mailto:info@impactguaranteeng.com">info@impactguaranteeng.com</a>
+            with the role title in the subject line.
+          </p>
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="container footer-bottom">
-        <span>© 2026 Impact Credit Guarantee Limited</span
-        ><a href="contact.html">Contact ICGL</a>
-      </div>
-    </footer>
     <script src="interaction.js"></script>
   </body>
 </html>
