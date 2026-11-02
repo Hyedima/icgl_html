@@ -218,6 +218,95 @@
   border-bottom: 1px solid rgba(51, 58, 66, .1);
   background: #fff;
 }
+.home-feedback {
+  background: var(--ink);
+}
+.home-feedback-wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  text-align: center;
+}
+.home-feedback-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-feedback-icon {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+}
+.home-feedback-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+.home-feedback-eyebrow {
+  margin-top: 24px;
+  color: rgba(169, 208, 70, .8);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .28em;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.home-feedback-content h2 {
+  margin: 20px 0 0;
+  color: var(--cream);
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.home-feedback-content > p {
+  max-width: 672px;
+  margin: 12px auto 0;
+  color: rgba(248, 248, 242, .75);
+  font-size: 14px;
+  line-height: 1.625;
+}
+.home-feedback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  transition: background-color .2s ease, color .2s ease;
+}
+.home-feedback-link:hover {
+  background: var(--lime-dark);
+  color: var(--cream);
+}
+.home-feedback-link svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  transition: transform .3s ease;
+}
+.home-feedback-link:hover svg {
+  transform: translate(.5px, -.5px);
+}
 .impact-wrap,
 .section-wrap,
 .news-wrap {
@@ -1113,6 +1202,10 @@
   .home-hero h1 {
     font-size: 60px;
   }
+  .home-feedback-content h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
   .impact-intro h2,
   .kvp-heading,
   .about-copy-block h2,
@@ -1142,6 +1235,10 @@
 }
 
 @media (min-width: 1024px) {
+  .home-feedback-wrap {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
   .home-wrap {
     padding-right: 40px;
     padding-left: 40px;
@@ -1266,6 +1363,10 @@
   .photo-track,
   .logo-track {
     animation: none !important;
+  }
+  .home-feedback-link,
+  .home-feedback-link svg {
+    transition: none;
   }
 
   .hero-reveal {
