@@ -8,91 +8,102 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages/pages.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="logo" href="index.html"
-          ><img
-            src="assets/icgl-logo.png"
-            alt="Impact Credit Guarantee Limited"
-        /></a>
-        <div class="nav-links">
-          <a href="index.html">Home</a><a href="about.html">About</a
-          ><a href="services.html">Services</a><a href="impact.html">Impact</a
-          ><a href="resources-news.html">Resources</a
-          ><a href="career.html">Career</a
-          ><a class="active" href="contact.html">Contact</a>
-        </div>
-        <div class="nav-actions">
-          <a class="btn btn-dark" href="eligibility.html">Check eligibility ↗</a
-          ><a href="admin-sign-in.html">Admin sign in</a>
-        </div>
-        <button class="nav-toggle" data-menu-toggle="#mobile-menu">☰</button>
-      </nav>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Home</a><a href="about.html">About</a
-        ><a href="services.html">Services</a><a href="impact.html">Impact</a
-        ><a href="resources-news.html">Resources</a
-        ><a href="career.html">Career</a><a href="contact.html">Contact</a>
-      </div>
-    </header>
+  <body class="contact-page">
     <main>
       <section class="page-hero">
         <div class="container">
-          <div class="crumbs">Home / Contact</div>
-          <div class="eyebrow">Contact Us</div>
+          <span class="eyebrow">Contact Us</span>
           <h1 class="display">Get in Touch</h1>
+          <div class="crumbs">Home / Contact</div>
         </div>
       </section>
+
       <section class="contact-content">
         <div class="container contact-layout">
-          <div>
-            <h2 class="display">Who We Are</h2>
-            <p class="lead">
-              ICGL was established to drive the second mandate of DBN, which is to provide risk sharing facilities to PFIs with a view to alleviating the financing constraint faced by MSMEs and small corporates in Nigeria. Less than 5% of Nigeria’s 41.5 million MSMEs have access to finance — a gap of ₦48 trillion.
-            </p>
-            <div class="contact-detail"><span>⌖</span><div><small>Location</small><p>Plot 952/953 Idejo Street, Victoria Island, Lagos</p></div></div>
-            <div class="contact-detail"><span>☎</span><div><small>Phone</small><a href="tel:+2342019061000">+234 201 906 1000</a></div></div>
-            <div class="contact-detail"><span>✉</span><div><small>Email</small><a href="mailto:info@impactguaranteeng.com">info@impactguaranteeng.com</a></div></div>
-            <iframe class="contact-map" title="ICGL office location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6872846196!2d3.4205!3d6.4317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53b7a1b1e49%3A0x0!2sPlot%20952%2F953%20Idejo%20Street%2C%20Victoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000" loading="lazy"></iframe>
+          <div class="contact-information reveal">
+            <h2 class="display">Get in Touch</h2>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  <p class="contact-detail-label">Location</p>
+                  <p class="contact-detail-value">
+                    Plot 952/953 Idejo Street,<br class="contact-mobile-break" />
+                    Victoria Island, Lagos
+                  </p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z" />
+                </svg>
+                <div>
+                  <p class="contact-detail-label">Phone</p>
+                  <a class="contact-detail-value" href="tel:+2342019061000">+234 201 906 1000</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <div>
+                  <p class="contact-detail-label">Email</p>
+                  <a class="contact-detail-value" href="mailto:info@impactguaranteeng.com">info@impactguaranteeng.com</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="contact-form-panel">
-            <h2 class="display">
-              Drop us a message and we’ll get back to you
-            </h2>
-            <form class="form form-grid contact-form" data-contact-form>
-              <input required name="fullName" placeholder="Full name" /><input
-                required
-                type="email"
-                name="email"
-                placeholder="Email address" /><input
-                class="full"
-                name="phoneNumber"
-                placeholder="Phone number" /><textarea
-                class="full"
-                required
-                name="message"
-                rows="5"
-                placeholder="Your message"></textarea
-              ><label class="full muted" style="font-size: 0.78rem"
-                ><input required type="checkbox" /> I consent to the processing
-                of my personal data.</label
-              ><button class="btn btn-dark" type="submit">
-                Send message ↗
-              </button>
-            </form>
-            <p class="notice contact-form-error hidden" role="alert"></p>
-            <p class="notice contact-form-success hidden" role="status">Your message has been sent. We’ll be in touch shortly.</p>
+
+          <div class="contact-form-column reveal" style="--reveal-delay: 80ms">
+            <div class="contact-form-panel">
+              <h2 class="display">Drop us a message and we&rsquo;ll get back to you</h2>
+              <form class="contact-react-form" data-contact-form>
+                <div class="contact-react-fields">
+                  <input required name="fullName" aria-label="Full name" placeholder="Full name" />
+                  <input required type="email" name="email" aria-label="Email address" placeholder="Email address" />
+                  <input class="contact-field-full" name="phoneNumber" aria-label="Phone number" placeholder="Phone number" />
+                  <textarea class="contact-field-full" required name="message" rows="4" aria-label="Your message" placeholder="Your message"></textarea>
+                  <label class="contact-consent">
+                    <input required type="checkbox" />
+                    <span>
+                      I consent to the processing of my personal data in line
+                      with ICGL&rsquo;s
+                      <a href="resources-privacy-policy.html">Privacy Policy</a>.
+                    </span>
+                  </label>
+                  <button class="contact-submit" type="submit">Send message</button>
+                </div>
+              </form>
+              <p class="notice contact-form-error hidden" role="alert"></p>
+              <p class="notice contact-form-success hidden" role="status">Your message has been sent. We&rsquo;ll be in touch shortly.</p>
+            </div>
+          </div>
+
+          <div class="contact-office reveal" style="--reveal-delay: 120ms">
+            <div class="contact-office-heading">
+              <div>
+                <p class="contact-office-eyebrow">Find us</p>
+                <h2 class="display">Our office address</h2>
+              </div>
+              <p>Plot 952/953 Idejo Street, Victoria Island, Lagos</p>
+            </div>
+            <div class="contact-map-frame">
+              <iframe
+                class="contact-office-map"
+                title="ICGL office location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6872846196!2d3.4205!3d6.4317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53b7a1b1e49%3A0x0!2sPlot%20952%2F953%20Idejo%20Street%2C%20Victoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="container footer-bottom">
-        <span>© 2026 Impact Credit Guarantee Limited</span
-        ><a href="index.html">Return home</a>
-      </div>
-    </footer>
     <script src="interaction.js"></script>
   </body>
 </html>
