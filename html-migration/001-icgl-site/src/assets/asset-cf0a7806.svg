@@ -1,0 +1,36 @@
+<svg style="width:44px;height:44px;flex-shrink:0;display:block;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1.48803in" height="1.48803in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1488.03 1488.03"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#F3F3F3}
+   ]]>
+  </style>
+   <clipPath id="ci1-id0">
+    <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+   </clipPath>
+    <clipPath id="ci1-id1">
+     <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+    </clipPath>
+    <clipPath id="ci1-id2">
+     <path d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+    </clipPath>
+ </defs>
+ <g id="ci1-Layer_x0020_1">
+  <metadata id="ci1-CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+  <g style="clip-path:url(#ci1-id0)">
+   <g id="ci1-_2411720339472">
+   </g>
+   <g style="clip-path:url(#ci1-id1)">
+    <image x="-3.03" y="2.5" width="1488.81" height="1488.33" xlink:href="images/asset-5af2a489.png"/>
+   </g>
+   <g style="clip-path:url(#ci1-id2)">
+   </g>
+  </g>
+  <path class="fil1" d="M741.37 2.64c410.91,0 744.02,333.11 744.02,744.02 0,410.91 -333.11,744.02 -744.02,744.02 -410.91,0 -744.02,-333.11 -744.02,-744.02 0,-410.91 333.11,-744.02 744.02,-744.02z"/>
+ </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg style="height:22px;width:auto;flex-shrink:0;display:block;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="3.09531in" height="0.670827in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3095.31 670.83"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#F3F3F3}
+   ]]>
+  </style>
+   <clipPath id="ci4-id0">
+    <path d="M-2.34 1.25l3095.31 0 0 670.82 -3095.31 0 0 -670.82z"/>
+   </clipPath>
+    <clipPath id="ci4-id1">
+     <path d="M-2.04 1.25l3092.82 0 0 664.7 -3092.82 0 0 -664.7z"/>
+    </clipPath>
+    <clipPath id="ci4-id2">
+     <path d="M-2.34 1.25l3095.31 0 0 670.82 -3095.31 0 0 -670.82z"/>
+    </clipPath>
+ </defs>
+ <g id="ci4-Layer_x0020_1">
+  <metadata id="ci4-CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="-2.34,1.25 3092.96,1.25 3092.96,672.07 -2.34,672.07 "/>
+  <g style="clip-path:url(#ci4-id0)">
+   <g id="ci4-_2411697316480">
+   </g>
+   <g style="clip-path:url(#ci4-id1)">
+    <image x="-2.04" y="-3.18" width="3092.82" height="669.13" xlink:href="images/asset-1a2bd495.png"/>
+   </g>
+   <g style="clip-path:url(#ci4-id2)">
+   </g>
+  </g>
+  <polygon class="fil1" points="-2.34,1.25 3092.96,1.25 3092.96,672.07 -2.34,672.07 "/>
+ </g>
+</svg>
