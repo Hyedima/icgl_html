@@ -101,6 +101,78 @@ const footer = `
     </div>
   </footer>`;
 
+const homeFooter = `
+  <footer class="home-react-footer">
+    <img class="home-footer-brand-bar" src="assets/asset-89738e53.jpg" alt="" aria-hidden="true">
+    <div class="home-footer-content">
+      <div class="home-footer-grid">
+        <div>
+          <img class="home-footer-logo" src="assets/icgl-logo-white.png" alt="Impact Credit Guarantee Limited">
+          <p class="home-footer-description">ICGL is a wholly owned subsidiary of the Development Bank of Nigeria Plc (DBN). ICGL was set up through a project with the World Bank to provide guarantees on loans made to MSMEs and small corporates by PFIs in Nigeria.</p>
+        </div>
+        <div>
+          <p class="home-footer-label">Useful Links</p>
+          <ul class="home-footer-links">
+            <li><a href="eligibility.html">Eligibility Criteria</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Careers</a></li>
+            <li><a href="resources-policies.html">Policies</a></li>
+            <li><a href="resources-whistleblowing.html">Whistleblowing</a></li>
+            <li><a href="resources-complaints.html">Complaints</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="home-footer-label">Contact Us</p>
+          <ul class="home-footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Plot 952/953 Idejo Street, Victoria Island, Lagos</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3.2a2 2 0 0 1-.6 1.7L7.1 10.5a16 16 0 0 0 6 6l1.9-1.9a2 2 0 0 1 1.7-.6l3.2.5a2 2 0 0 1 2.1 2.4Z"/></svg>
+              <a href="tel:+2342019061000">+234 201 906 1000</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:info@impactguaranteeng.com">info@impactguaranteeng.com</a>
+            </li>
+          </ul>
+          <div class="home-footer-socials">
+            <a href="https://web.facebook.com/impactguaranteeng?_rdc=1&amp;_rdr#" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="assets/logos/icon_facebook.png" alt="" aria-hidden="true"></a>
+            <a href="https://x.com/impactguarantee" target="_blank" rel="noreferrer" aria-label="X"><img src="assets/logos/icon_X.png" alt="" aria-hidden="true"></a>
+            <a href="https://www.instagram.com/impactguarantee" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="assets/logos/icon_instagram.png" alt="" aria-hidden="true"></a>
+            <a href="https://www.linkedin.com/company/impact-credit-guarantee/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><img src="assets/logos/icon_linkedin.png" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
+        <div>
+          <p class="home-footer-label">Certifications &amp; Ratings</p>
+          <ul class="home-footer-certifications">
+            <li><img src="assets/ratings-iso1.png" alt="" aria-hidden="true"><span><strong>ISO 27001:2022</strong> Information Security Management System (ISMS)</span></li>
+            <li><img src="assets/ratings-iso2.png" alt="" aria-hidden="true"><span><strong>ISO 22301:2019</strong> Business Continuity Management System (BCMS)</span></li>
+            <li><img src="assets/ratings-iso3.png" alt="" aria-hidden="true"><span><strong>ISO 20000:2018</strong> Service Management System (ITSMS)</span></li>
+            <li><img src="assets/ratings-agu.png" alt="" aria-hidden="true"><span><strong>Agusto &amp; Co.</strong> Aa+ Rating 2026</span></li>
+            <li class="home-footer-ndp"><img src="assets/ndp.png" alt="NDP Act compliance emblem and QR code"><span>NDP Act, 2023<br>Compliance Audit</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="home-footer-license">
+        <img src="assets/cbn.png" alt="Central Bank of Nigeria">
+        <span>Licensed by Central Bank of Nigeria (CBN)</span>
+      </div>
+      <div class="home-footer-bottom">
+        <div class="home-footer-divider" aria-hidden="true"></div>
+        <div class="home-footer-bottom-row">
+          <span>© ${new Date().getFullYear()}, All rights reserved. Copyright by Impact Credit Guarantee Limited.</span>
+          <div>
+            <a href="resources-privacy-policy.html">Privacy Policy</a>
+            <a href="https://www.devbankng.com" target="_blank" rel="noreferrer">Parent Company</a>
+            <a href="about.html">Corporate Philosophy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>`;
+
 const iconFiles = [
   "hero-icon-notepad.png", "hero-icon-search.png", "hero-icon-document.png",
   "hero-icon-pie-chart.png", "hero-icon-network.png", "hero-icon-briefcase.png",
@@ -173,11 +245,13 @@ function buildHeroIconConfigs() {
 
 function installSharedLayout() {
   if (location.pathname.startsWith("/admin") || location.pathname.includes("admin-")) return;
+  const currentPage = location.pathname.split("/").pop() || "index.html";
+  const isHomepage = currentPage === "index.html";
   document.querySelector(".site-header")?.remove();
   document.querySelector(".footer")?.remove();
   document.querySelector("footer")?.remove();
   document.body.insertAdjacentHTML("afterbegin", navigation);
-  document.body.insertAdjacentHTML("beforeend", footer);
+  document.body.insertAdjacentHTML("beforeend", isHomepage ? homeFooter : footer);
 
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".mobile-menu");
@@ -193,7 +267,6 @@ function installSharedLayout() {
     document.querySelector(".mobile-sub").classList.toggle("open", open);
   });
 
-  const currentPage = location.pathname.split("/").pop() || "index.html";
   const activeDocument = routesByPath[currentPage] || currentPage;
   document.querySelectorAll(".nav-links a, .mobile-menu > a").forEach((link) => {
     if (link.getAttribute("href") === activeDocument) link.classList.add("active");

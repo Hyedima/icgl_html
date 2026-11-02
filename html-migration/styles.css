@@ -965,6 +965,212 @@ body {
   flex-wrap: wrap;
   gap: 22px;
 }
+.home-react-footer {
+  background: var(--ink);
+  color: var(--cream);
+}
+.home-footer-brand-bar {
+  display: block;
+  width: 100%;
+  height: 6px;
+  object-fit: cover;
+}
+.home-footer-content {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+.home-footer-grid {
+  display: grid;
+  gap: 40px;
+}
+.home-footer-logo {
+  display: block;
+  width: 176px;
+  height: auto;
+  object-fit: contain;
+  object-position: left;
+}
+.home-footer-description {
+  max-width: 448px;
+  margin: 12px 0 0;
+  color: rgba(248, 248, 242, .6);
+  font-size: .875rem;
+  line-height: 1.625;
+}
+.home-footer-label {
+  margin: 0;
+  color: rgba(248, 248, 242, .4);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.home-footer-links,
+.home-footer-contact,
+.home-footer-certifications {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.home-footer-links {
+  gap: 10px;
+  line-height: 24px;
+}
+.home-react-footer a,
+.home-footer-contact,
+.home-footer-certifications {
+  color: rgba(248, 248, 242, .7);
+  font-size: .875rem;
+  line-height: 1.5;
+}
+.home-react-footer a {
+  transition: color .2s ease;
+}
+.home-react-footer a:hover {
+  color: var(--cream);
+}
+.home-footer-contact {
+  gap: 12px;
+  line-height: 20px;
+}
+.home-footer-contact a {
+  line-height: 20px;
+}
+.home-footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.home-footer-contact svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 2px;
+  fill: none;
+  stroke: var(--lime);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+.home-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.home-footer-socials a {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(248, 248, 242, .15);
+  border-radius: 50%;
+}
+.home-footer-socials a:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+.home-footer-socials img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.home-footer-certifications {
+  gap: 12px;
+  line-height: 20px;
+}
+.home-footer-certifications li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.home-footer-certifications img {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  object-fit: contain;
+}
+.home-footer-certifications strong {
+  color: var(--cream);
+  font-weight: 500;
+}
+.home-footer-certifications .home-footer-ndp {
+  gap: 12px;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: var(--cream);
+}
+.home-footer-license {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+.home-footer-license img {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  object-fit: contain;
+}
+.home-footer-license span {
+  padding-bottom: 2px;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.home-footer-bottom {
+  margin-top: 24px;
+}
+.home-footer-divider {
+  height: 1px;
+  margin-bottom: 16px;
+  background: rgba(248, 248, 242, .1);
+}
+.home-footer-bottom-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: rgba(248, 248, 242, .5);
+  font-size: .75rem;
+  line-height: 16px;
+}
+.home-footer-bottom-row > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.home-footer-bottom-row a {
+  font-size: .75rem;
+  line-height: 16px;
+}
+@media (min-width: 640px) {
+  .home-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-footer-bottom-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .home-footer-content {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .home-footer-grid {
+    grid-template-columns: 1.2fr .65fr 1.05fr 1.3fr;
+    gap: 32px;
+  }
+}
 .section h2 {
   font-weight: 500;
 }
